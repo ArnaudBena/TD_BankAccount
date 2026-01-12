@@ -10,13 +10,13 @@ import java.util.UUID;
 
 public abstract class Account {
 
-    protected UUID id;
-    protected String iban;
+    protected final UUID id;
+    protected final String iban;
     protected double balance;
-    protected double overdraftLimit;
+    protected final double overdraftLimit;
     protected Client owner;
     protected boolean closed;
-    protected LocalDate openedAt;
+    protected final LocalDate openedAt;
     protected LocalDate closedAt;
 
     protected Account(double balance, double overdraftLimit, Client owner) {
