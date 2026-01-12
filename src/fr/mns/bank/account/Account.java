@@ -21,12 +21,16 @@ public abstract class Account {
 
     protected Account(double balance, double overdraftLimit, Client owner) {
         this.id = UUID.randomUUID();
-        this.iban = "iban";
+        this.iban = generateIban();
         this.balance = balance;
         this.overdraftLimit = overdraftLimit;
         this.owner = owner;
         this.closed = false;
         this.openedAt = LocalDate.now();
+    }
+
+    private String generateIban() {
+        return "IBAN-" + UUID.randomUUID();
     }
 
     public String getIban() {
